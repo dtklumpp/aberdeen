@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* background-color: #f1f1f1; */
+    /* background-color: #a1a1a1; */
+    background-color: #d1d1d1;
+    /* padding: 0 0; */
+    margin: 0 0 8px 0;
+}
+
+.header {
+    color: green;
+    border: 5px solid black;
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+}
+
+h1 {
+    border: 5px solid gray;
+    margin: 0 auto;
+}
+
+.pond {
+    margin: 0 8px;
+    border: 1px solid chartreuse;
+}
+
+.subheader {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-around;
+    border: 2px solid magenta;
+}
+
+h2 {
+    border: 1px solid blue;
+}
+
+button {
+    width: 75px;
+    height: 30px;
+    margin: auto 0;
+}
+
+.griddo {
+    border: 2px solid khaki;
+
+    display: grid;
+    /* grid-template-rows: 100px 1fr; */
+
+    /* grid-template-rows: 100px 1fr;
+    grid-template-columns: 250px; */
+
+    column-gap: 2rem;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+
+
+
+    /* display: flex;
+    justify-content: space-around; */
+
+    /* flex-wrap: wrap; */
+}
+
+h3 {
+    border: 1px solid firebrick;
+    width: 30%;
+    /* display: inline; */
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+.butt {
+    background-color: coral;
+}
+
+button:hover {
+    background-color: blueviolet !important;
+    opacity: 50%;
+    transition: opacity 1s;
+}
+/* ah i see
+originally was button :hover
+which meant only a hovered element WITHIN a button!
+*/
+
+h4 {
+    background-color: deeppink;
+    color:brown;
+}
+
+
+
+
+/* 
+h1 {
+    color: green;
+}
+h2 {
+    color: green;
+    font-size: 14px;
+}
+
+h3 {
+    outline-width: 2px;
+    outline-color: black;
+    border-color: red;
+    border-width: 2px;
+    padding: 5px;
+    margin: 3px;
+    width: 70px;
+    height: 15px;
+    background: #000;
+    color: white;
+}
+
+h4 {    
+    outline-width: 2px;
+    outline-color: black;
+    border-color: red;
+    border-width: 2px;
+    border-radius: 2px;
+    border-style: solid;
+    padding: 5px;
+    margin: 33px;
+    width: 10px;
+    height: 10px;
+}
+
+.sideways {
+    display: block;
+    outline-width: 2px;
+    outline-color: black;
+    border-color: red;
+    border-width: 2px;
+    border-style: solid;
+    padding: 5px;
+    margin: 3px;
+    width: 30px;
+    height: 30px;
+}
+
+#pond {
+    display: flex;
+    display: inline;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.upright {
+    display: flex; --this was commented too
+    justify-content: flex-end;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}
+
+h5 {
+    display: block;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    width: 30px;
+    height: 30px;
+} */
