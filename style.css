@@ -94,77 +94,143 @@ h4 {
     color:brown;
 }
 
-
-
-
-/* 
-h1 {
-    color: green;
-}
-h2 {
-    color: green;
-    font-size: 14px;
+.lincoln {
+    color: #d1d1d1;
+    /* visibility: hidden; */
+    display: none;
 }
 
-h3 {
-    outline-width: 2px;
-    outline-color: black;
-    border-color: red;
-    border-width: 2px;
-    padding: 5px;
-    margin: 3px;
-    width: 70px;
-    height: 15px;
-    background: #000;
+.topbar {
+    position: relative;
+    /* background-color: #1f1f1f; */
+    background-image: url("./inflicted.png");
+    /* background-repeat: no-repeat; */
+    height: 200px;
     color: white;
+    /* overflow: hidden; */
+    padding: 0.01px;
 }
 
-h4 {    
-    outline-width: 2px;
-    outline-color: black;
-    border-color: red;
-    border-width: 2px;
-    border-radius: 2px;
-    border-style: solid;
-    padding: 5px;
-    margin: 33px;
-    width: 10px;
-    height: 10px;
+.title {
+    font-size: 42px;
+    /* position: relative; */
+    /* left: 100px;
+    top: 50px; */
+    margin: 75px 0 0 40px;
 }
 
-.sideways {
-    display: block;
-    outline-width: 2px;
-    outline-color: black;
-    border-color: red;
-    border-width: 2px;
-    border-style: solid;
-    padding: 5px;
-    margin: 3px;
-    width: 30px;
-    height: 30px;
+.subtitle {
+    font-size: 20px;
+    margin: 25px 0 0 40px;
 }
 
-#pond {
+.twit {
+    position: absolute;
+    right: 40px;
+    top: 25px;
+    background-color: lightskyblue;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.navbar {
+    height: 50px;
+    background-color: grey;
+    opacity: 50%;
     display: flex;
-    display: inline;
-    align-items: flex-end;
-    justify-content: center;
+    /* flex-direction: row; */
+    justify-content: space-around;
+    align-items: center;
 }
 
-.upright {
-    display: flex; --this was commented too
-    justify-content: flex-end;
-    border-style: solid;
-    border-width: 2px;
-    border-color: black;
+.bartab {
+    font-size: 18px;
+    height: 50px;
+    /* width: 100px; */
+    padding: 0 20px;
+    /* margin: auto auto; */
+    /* text-align: center; */
+    vertical-align: middle;
+    line-height: 50px;
 }
 
-h5 {
-    display: block;
-    border-style: solid;
-    border-width: 2px;
-    border-color: black;
-    width: 30px;
-    height: 30px;
-} */
+.bartab:hover {
+    background-color: white;
+    opacity: 50%;
+    transition: background-color 0.3s;
+}
+
+.temple {
+    display: grid;
+    column-gap: 3rem;
+    padding: 20px;
+}
+
+.t1 {
+    grid-template-columns: 2fr 3fr;
+}
+.t2 {
+    grid-template-columns: 4fr 1fr;
+}
+.t3 {
+    grid-template-columns: 2fr 1.5fr 1.5fr;
+}
+.t4 {
+    grid-template-columns: 1fr;
+}
+
+.box {
+    border: 3px solid black;
+    /* margin: 0 5px; */
+    height: 150px;
+    font-size: 24px;
+    padding: 10px;
+    background-image: url("./tiny_grid.png");
+}
+
+.hundred {
+    padding: 20px 0 30px 10px;
+}
+
+.inner-big {
+    font-size: 36px;
+}
+
+.inner-little {
+    margin: 30px 0 0px 0;
+    font-size: 20px;
+}
+
+.footer {
+    color: white;
+    width: 100%;
+    height: 200px;
+    background-color: #313131;
+    padding: 10px 0;
+}
+
+.credits {
+    width: 90%;
+    height: 70%;
+    background-color: grey;
+    opacity: 50%;
+    margin: 0 auto;
+    /* padding: 10px 0 0 10px; */
+}
+
+.signoff {
+    margin: 10px 0 0 10px;
+}
+
+.big-temple {
+    grid-template-columns: 1fr 3fr 2fr 2fr;
+}
+
+.row1 {
+    grid-column: auto / span 2;
+    margin: 0 0 10px;
+}
+.row2 {
+    grid-column: auto / span 1;
+    margin: 0 0 10px;
+}
