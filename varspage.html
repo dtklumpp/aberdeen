@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!-- <html lang="en" class="notranslate" translate="no"> -->
+<!-- <html translate="no"> -->
+<head>
+    <meta name="google" content="notranslate">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="./main.js" defer></script>
+    <link rel="stylesheet" href="./varstyles.css">
+    <title>Document</title>
+</head>
+<body>
+    <br/>
+    <div>
+        <div class="v1">* {box-sizing: border-box;}</div>
+        <div></div>
+        <div class="v1">body {background-color: #d1d1d1;} </div>
+        <div></div>
+        <div class="v1">body {font-size: 20px} </div>
+        <div></div>
+        <div class="v1">div:nth-child(odd) {background-color: #91fff0;}</div>
+    </div>
+    <br/>
+    <div>
+        <div></div>
+        <div class="v1">:root {--base-color: fuchsia;}</div>
+        <div></div>
+        <div class="v1">.varcolor {background-color: var(--base-color);}</div>
+        <div class="varcolor">
+            <div></div>
+            <div>DK note: &ltbr&gt tag is bad -- inconsistent across browsers and bad for screenreaders</div>
+        </div>
+    </div>
+    <br/>
+    <div>
+        <div class="v1">&lt;br/&gt; </div>
+        <div></div>
+        <div class="v1">&nbsp; & n b s p ;</div>
+        <div></div>
+        <div class="v1">&emsp; & e m s p ;</div>
+    </div>
+    <br/>
+    <div>
+        <div></div>
+        <div class="v1 v2">&lt;div class="v1 v2"&gt;[content ]&lt;/div&gt;</div>
+        <div></div>
+        <div class="v1 v2">in CSS:</div>
+        <div></div>
+        <div class="v1 v2">.v2 {<br> &nbsp;&nbsp; background-color: #f091ff;<br>}</div>
+    </div>
+    <br/>
+    <div></div>
+    <div class="v1 v2 v3">width: 300px;</div>
+    <div></div>
+    <div class="v1 v2 vb">width: 20%;</div>
+    <div></div>
+    <div class="v1 v2 vc">width: 20em;</div>
+    <div></div>
+    <div class="v1 v2 vd">width: 20rem;</div>
+    <br/>
+    <div></div>
+    <div class="v1 v2 v3 vz">color: white;</div>
+    <br/>
+    <div></div>
+    <div class="v1 v2 v3 v4">color: black;</div>
+    <br/>
+    <div></div>
+    <div class="v1 v2 v3 v4 v5">border: 2px solid black;</div>
+    <br/>
+    <div></div>
+    <div class="v1 v2 v3 v4 v5 v6">height: 30px;</div>
+    <br/>
+    <div></div>
+    <div class="v1 v2 v3 v4 v5 v6 v7">margin: 0 auto;</div>
+    <br/>
+    <div></div>
+    <div class="v1 v2 v3 v4 v5 v10">padding: 10px;</div>
+    <br/>
+    <div></div>
+    <div class="v1 v2 v3 v4 v5 v11">padding: 0 0 10px 10px;</div>
+    <br/>
+    <!-- <div class="v1 v2 v3 v4 v5">other measurement options:<br/>300px;<br/>25%;<br/>30em;<br/>30rem;</div>
+        <br/> -->
+    <div></div>
+    <div class="v1 v2 v3 v4 v5 v10 v8">.v8:hover {}:<br/>background-color: blueviolet</div>
+    <br/>
+    <div></div>
+    <div class="v1 v2 v3 v4 v5 v10 v8">!important</div>
+    <br/>
+    <div></div>
+    <div class="v1 v2 v3 v4 v5 v10 v8 v9">.v9:hover {<br/>&emsp;opacity: 50%;<br/>&emsp;transition: opacity 1s;<br/>}</div>
+    <br/>
+    <div></div>
+    <div class="v1 v2 v3 v4 v5 v10">display: none; [would be hidden]</div>
+    <!-- <br/> -->
+    <div class="v1 v2 v3 v4 v5 v10 v13">margin: 5px 0 5px 0;</div>
+    <div class="v1 v2 v3 v4 v5 v10 v13 v14">border-radius: 10px;</div>
+    <div class="v1 v2 v3 v4 v5 v10 v13">.flex-contain {
+        <br/>&emsp; display: flex;
+        <br/>&emsp; align-items: center;
+        <br/>&emsp; justify-content: space-around;
+        <br/>}
+    </div>
+    <div class="v1 v2 v3 v4 v5 v10 v13">.grid-contain {
+        <br/>&emsp; display: grid;
+        <br/>&emsp; column-gap: 2rem;
+        <br/>&emsp; grid-template-columns: 1fr 2fr 2fr 1fr;
+        <br/>}
+    </div>
+    <div class="v1 v2 v3 v4 v5 v10 v13">.positioning {
+        <br/>&emsp; position: absolute;
+        <br/>&emsp; right: 40px;
+        <br/>&emsp; top: 25px;
+        <br/>}
+    </div>
+    <div class="v1 v2 v3 v4 v5 v10 v13">.text-aligning {
+        <br/>&emsp; vertical-align: middle;
+        <br/>&emsp; line-height: 50px;
+        <br/>}
+    </div>
+    <div class="v1 v2 v3 v4 v5 v10 v13">table, th, td {
+        <br/>&emsp; border: 1px solid black;
+        <br/>}
+    </div>
+
+    
+</body>
+</html>

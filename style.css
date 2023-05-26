@@ -234,3 +234,22 @@ h4 {
     grid-column: auto / span 1;
     margin: 0 0 10px;
 }
+
+.varcolor {
+    /* background-color: forestgreen; */
+    background-color: var(--base-color);
+    width: 300px;
+}
+
+:root {
+    --base-color: fuchsia;
+}
+
+.v2 {
+    background-color: #f091ff;
+}
+
+.v3 {
+    width: 300px;
+}
+
