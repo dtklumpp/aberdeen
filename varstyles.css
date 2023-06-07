@@ -7,6 +7,7 @@ body {
     background-color: #d1d1d1;
     /* margin: 0 0 8px 0; */
     font-size: 20px;
+    /* color: #161616; */
 }
 
 div:nth-child(odd) {
@@ -123,4 +124,61 @@ div:nth-child(even) {
 
 table, th, td {
     border: 1px solid black;
+}
+
+.v15 {
+    width: 50%;
+}
+
+/* this works */
+/* but i feel like i shouldn't have to make an ID */
+/*
+#joyce {
+    background-color: #f4f3db;
+    color: #333;
+}
+*/
+
+/* this is probably best practice -- nesting to make more specific */
+div .james {
+    background-color: #f4f3db;
+    color: #333;
+}
+
+/* these work but are bad practice */
+/*
+.joyce.joyce {
+    background-color: #f4f3db;
+}
+.joyce {
+    background-color: #f4f3db !important;
+}
+*/
+
+/* these don't even work */
+/* 
+.v16 {
+    background-color: #f4f3db;
+}
+.v17 {
+    background-color: #f4f3db;
+}
+.v16, .v17 {
+    background-color: #f4f3db;
+} 
+
+.v16.v17 {
+    background-color: #f4f3db;
+}
+*/
+
+
+
+
+#dramatic {
+    background-color: white;
+}
+
+.dramatic {
+    background-color: white !important;
 }

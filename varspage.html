@@ -87,7 +87,7 @@
     <div class="v1 v2 v3 v4 v5 v10 v8">.v8:hover {}:<br/>background-color: blueviolet</div>
     <br/>
     <div></div>
-    <div class="v1 v2 v3 v4 v5 v10 v8">!important</div>
+    <div class="v1 v2 v3 v4 v5 v10 v8">!important<br/>also not great practice</div>
     <br/>
     <div></div>
     <div class="v1 v2 v3 v4 v5 v10 v8 v9">.v9:hover {<br/>&emsp;opacity: 50%;<br/>&emsp;transition: opacity 1s;<br/>}</div>
@@ -109,11 +109,22 @@
         <br/>&emsp; grid-template-columns: 1fr 2fr 2fr 1fr;
         <br/>}
     </div>
-    <div class="v1 v2 v3 v4 v5 v10 v13">.positioning {
+    <div class="v1 v2 v3 v4 v5 v10 v13 v15">.positioning {
         <br/>&emsp; position: absolute;
         <br/>&emsp; right: 40px;
         <br/>&emsp; top: 25px;
         <br/>}
+        <br/>position: absolute (to nearest positioned ancestor)
+        <br/>OR
+        <br/>position: relative (to its normal position)
+        <br/>position: static (is the default)
+        <br/>position: fixed (not move with scroll)
+        <br/>position: sticky (similar)
+    </div>
+    <div class="v1 v2 v3 v4 v5 v10 v13 v15">
+        margin collapse:
+        <br/>add overflow: hidden/auto
+        <br/>or padding: 0.01px
     </div>
     <div class="v1 v2 v3 v4 v5 v10 v13">.text-aligning {
         <br/>&emsp; vertical-align: middle;
@@ -124,7 +135,60 @@
         <br/>&emsp; border: 1px solid black;
         <br/>}
     </div>
+    <div class="vc">
+        <div class="v1 v2 v3 v4 v5 v10 v13 james v17 v18" id="joyce">
+            <h2>Joyce The Dead</h2>
+            <br/>div .james {
+            <br/>&emsp;background-color: #f4f3db;
+            <br/>&emsp;color: #333;
+            <br/>}
+        </div>
+    </div>
 
+    <h3 class="button1">&lt;h3&gt; class="button1"&lt;/h3&gt;</h3>
+    <button class="button2">&lt;button class="button2"&lt;/button&gt;</button>
+    <br/>
+    
+    
+    <div class="v1 v2 v3 v4 v5 v10 v13 hideit">
+    hideit
+    <br/>$('.button1').on('click', () => {
+        <br/>&emsp;$('.hideit').toggle();
+        <br/>})
+    </div>
+
+    <div class="v1 v2 v3 v4 v5 v10 v13 countit">
+        countit
+    </div>
+    <div></div>
+    <div class="v1 v2 vc v4 v5 v10 v13">
+        <br/>$('.button2').on('click', () => {
+        <br/>&emsp;count++;
+        <br/>&emsp;console.log('countit!-'+count);
+        <br/>&emsp;$('.countit').text("countit!--"+count)
+        <br/>})
+    </div>
+            
+    <button onclick="showContent()">toggle</button>
+    <br/>
+    <button onclick="showContent()">&lt;button onclick="showContent()"&gt;</button>
+    
+    <div class="v1 v2 v3 v4 v5 v10 v13" style="background-color: white;">
+        dramatic whitespace
+    </div>
+    <div class="v1 v2 v3 v4 v5 v10 v13">
+        &lt;div style="background-color: white;"&gt;
+    </div>
+    <div class="v1 v2 vc v4 v5 v10 v13 dramatic">
+        <br/>.dramatic {
+        <br/>&emsp;background-color: white !important;
+        <br/>}
+    </div>
+    <div class="v1 v2 v3 v4 v5 v10 v13" id="dramatic">
+        <br/>#dramatic {
+        <br/>&emsp;background-color: white;
+        <br/>}
+    </div>
     
 </body>
 </html>
