@@ -182,3 +182,9 @@ div .james {
 .dramatic {
     background-color: white !important;
 }
+
+button {
+    width: 75px;
+    height: 30px;
+    margin: auto 0;
+}

@@ -3,7 +3,7 @@ console.log({biff});
 
 let count = 0;
 
-// for firstpage
+// FOR FIRSTPAGE
 
 $('.butt').on('click', () => {
     count++;
@@ -23,7 +23,12 @@ $('.butt2').on('click', () => {
     $('.page2').toggle();
 })
 
-// for index page
+
+
+
+
+
+// FOR INDEX PAGE
 
 $('.button1').on('click', () => {
     $('.hideit').toggle();
@@ -38,7 +43,12 @@ function showContent(){
     $('.hideit').toggle();
 }
 
-// making navbar with Web Components
+
+
+
+
+
+// MAKING NAVBAR WITH WEB COMPONENTS
 
 class NavBar extends HTMLElement {
     // constructor(){
@@ -49,37 +59,40 @@ class NavBar extends HTMLElement {
         // super();
         // super.connectedCallback();
 
-        // this.innerHTML = `
-        // <div class="overflow2">
-        //     <a href="./index.html"><button>index</button></a>
-        //     <a href="./firstpage.html"><button>firstpage</button></a>
-        //     <a href="./page3.html"><button>page3</button></a>
-        //     <button>nada</button>
-        //     <a href="./gridpage.html"><button>gridpage</button></a>
-        //     <a href="./varspage.html"><button>css-vars</button></a>
-        // </div>
-        // `;
-
-        this.innerHTML = 
-        `
-            <navbar>
-            main nav content goes here via extension           
-            </navbar>     
+        this.innerHTML = `
+        <div class="header">
+            <a href="./index.html"><button>index</button></a>
+            <a href="./firstpage.html"><button>firstpage</button></a>
+            <a href="./page3.html"><button>page3</button></a>
+            <button>nada</button>
+            <a href="./gridpage.html"><button>gridpage</button></a>
+            <a href="./varspage.html"><button>css-vars</button></a>
+        </div>
         `;
+
+        // this.innerHTML = 
+        // `
+        //     <navbar>
+        //     main nav content goes here via extension           
+        //     </navbar>     
+        // `;
     }
 }
 customElements.define('main-nav', NavBar);
 
 
-//making NavBar with Jquery
+
+
+
+
+
+//MAKING NAVBAR WITH JQUERY
 
 const jqnav = $('#jqnav');
-jqnav.text('jqnav is here!');
-
-console.log("jqnav didn't throw an error");
-
-jqnav.css('color', 'red');
+// jqnav.text('jqnav is here!');
+// jqnav.css('color', 'red');
 jqnav.addClass('header');
+console.log("jqnav didn't throw an error");
 
 // jqnavs.eq(0)
 // .html 
@@ -97,6 +110,35 @@ jqnav.addClass('header');
 //target
 //currentTarget
 
-newdiv = $('<div/>');
-newdiv.text('hiya');
-jqnav.append(newdiv);
+let links = [
+    ['index', "./index.html"],
+    ['firstpage', "./firstpage.html"],
+    ['page3',"./page3.html"],
+    ['nada', null],
+    ['gridpage',"./gridpage.html"],
+    ['css-vars',"./varspage.html"],
+]
+
+for(let link of links){
+    let title = link[0];
+    let url = link[1];
+    let newbutton = $('<button/>');
+    let newanchor = $('<a/>');
+    newbutton.text(title);
+    if(url) newanchor.attr('href', url);
+    newanchor.append(newbutton);
+    jqnav.append(newanchor);
+    jqnav.append(" ");
+}
+
+// newdiv = $('<div/>');
+// newdiv.text('newdiv');
+// jqnav.append(newdiv);
+
+
+
+
+
+
+//WHATS NEXT
+
