@@ -4,10 +4,13 @@
 //output
 
 $('#store').on('click', () => {
-    let input = $('#user-input').text();
+    // let input = $('#user-input').text();
+    let input = $('#user-input').val();
     localStorage.setItem('lockbox', input);
-    console.log(input);
-    console.log(localStorage.getItem('lockbox'));
+    $('#user-input').val("");
+    // console.log(input);
+    // console.log(unput);
+    // console.log(localStorage.getItem('lockbox'));
 })
 
 $('#show').on('click', () => {
