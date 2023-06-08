@@ -120,6 +120,7 @@ let links = [
     ['gridpage',"./gridpage.html"],
     ['css-vars',"./varspage.html"],
     ['fetch', "./fetch.html"],
+    ['storage','./storage.html'],
 ]
 
 for(let link of links){
