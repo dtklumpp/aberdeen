@@ -3,11 +3,11 @@ console.log({biff});
 
 let count = 0;
 
-// FOR FIRSTPAGE
+// FOR "FIRSTPAGE"
 
 $('.butt').on('click', () => {
     count++;
-    console.log('boo!-'+count);
+    console.log('boo!-'+count); 
     $('.ghost').toggle();
 })
 
@@ -22,7 +22,6 @@ $('.butt2').on('click', () => {
     console.log('bar!-'+count);
     $('.page2').toggle();
 })
-
 
 
 
@@ -43,6 +42,9 @@ function showContent(){
     $('.hideit').toggle();
 }
 
+// $('.toggle-web-comps').on('click', function(){
+//     $('.togglable').toggle();
+// })
 
 
 
@@ -88,7 +90,7 @@ customElements.define('main-nav', NavBar);
 
 //MAKING NAVBAR WITH JQUERY
 
-const jqnav = $('#jqnav');
+const jqnav = $('#navbar-jq');
 // jqnav.text('jqnav is here!');
 // jqnav.css('color', 'red');
 jqnav.addClass('header');
@@ -117,6 +119,8 @@ let links = [
     ['nada', null],
     ['gridpage',"./gridpage.html"],
     ['css-vars',"./varspage.html"],
+    ['fetch', "./fetch.html"],
+    ['storage','./storage.html'],
 ]
 
 for(let link of links){
@@ -140,5 +144,4 @@ for(let link of links){
 
 
 
-//WHATS NEXT
-
+//FOR FETCH PAGE
