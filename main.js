@@ -3,6 +3,8 @@ console.log({biff});
 
 let count = 0;
 // export count;
+export default biff;
+// module.exports = biff;
 
 // FOR "FIRSTPAGE"
 
@@ -146,3 +148,4 @@ for(let link of links){
 
 
 //FOR FETCH PAGE
+

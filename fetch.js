@@ -1,6 +1,24 @@
 // type='module';
-import count from './main.js';
+// import count from './main.js';
 // require('./main.js');
+
+import * as cargo from './main.js';
+import biff from './main.js';
+import bosa from './main.js';
+
+//MOVE ALL THIS IMPORT STUFF TO "IMPORT" DOC
+
+//prints cargo Module
+console.log(cargo);
+//prints cargo module within object called cargo
+console.log({cargo});
+//print "boff"
+console.log(cargo.default);
+//prints {biff: "boff"} object
+console.log({biff});
+//prints {bosa: "boff"} object
+console.log({bosa});
+// console.log("hey");
 
 function getWeather(){
     let weather = $('#weather');
@@ -166,7 +184,7 @@ $('.test-jq').on('click', () => {
 
 
 
-
+// import OPENWEATHERMAP from './.env';
 
 $('.open-weather').on('click', () => {
     counter++;
@@ -174,6 +192,7 @@ $('.open-weather').on('click', () => {
 })
 
 function openWeather(){
+    // fetch("https://api.openweathermap.org/data/3.0/onecall?lat=39.99&lon=-75.27&appid="+OPENWEATHERMAP)
     fetch("https://api.openweathermap.org/data/3.0/onecall?lat=39.99&lon=-75.27&appid=01f643ba97215cb02bea5c9cc71a762a")
     .then(res => res.json())
     .then(json => {
