@@ -5,16 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="./main.js" defer></script>
-    <script src="./fetch.js" defer></script>
+    <!-- <script src="./main.js" defer></script> -->
+    <script type="module" src="./fetch.js" defer></script>
     <link rel="stylesheet" href="./fetch.css">
     <title>Document</title>
 </head>
 <body>
     <div id="navbar-jq"></div>
-    <h2 style="color: blue" class="get-weather">get weather PA</h2>
-    <h3 style="color: blue" class="alt-forecast">alt forecast</h3>
-    <h3 style="color: blue" class="open-weather">open weather</h3>
+    <h2 style="color: blue" class="get-weather snug">get weather PA</h2>
+    <h3 style="color: blue" class="alt-forecast snug">alt forecast</h3>
+    <h3 style="color: blue" class="open-weather snug">open weather</h3>
+    <h3 style="color: blue" class="test-JQ snug">test-append</h3>
     <div id="weather">
         <h2 id="place"></h2>
         <p id="event"></p>
@@ -22,5 +23,7 @@
         <p id="desc"></p>
     </div>
     <div id="forecast"></div>
+    <div id="open-forecast"></div>
+    <div id="test-append"></div>
 </body>
 </html>

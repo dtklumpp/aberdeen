@@ -16,3 +16,7 @@ button {
     height: 30px;
 }
 
+.snug {
+    /* display: inline-block; */
+    width: fit-content;
+}
