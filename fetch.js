@@ -1,24 +1,4 @@
-// type='module';
-// import count from './main.js';
-// require('./main.js');
 
-import * as cargo from './main.js';
-import biff from './main.js';
-import bosa from './main.js';
-
-//MOVE ALL THIS IMPORT STUFF TO "IMPORT" DOC
-
-//prints cargo Module
-console.log(cargo);
-//prints cargo module within object called cargo
-console.log({cargo});
-//print "boff"
-console.log(cargo.default);
-//prints {biff: "boff"} object
-console.log({biff});
-//prints {bosa: "boff"} object
-console.log({bosa});
-// console.log("hey");
 
 function getWeather(){
     let weather = $('#weather');
@@ -59,12 +39,12 @@ function getWeather(){
 }
 
 let counter = 0;
-let count = 0;
+// let count = 0;
 $('.get-weather').on('click', () => {
     counter++;
-    count++;
+    // count++;
     console.log("count: ",counter);
-    console.log("count: ",count);
+    // console.log("count: ",count);
     getWeather();
 })
 
@@ -163,8 +143,10 @@ $('.alt-forecast').on('click', () => {
 
 
 //original way
-$('.test-jq').on('click', () => {
+$('.test-JQ').on('click', () => {
     console.log('test-jq');
+    $('#forecast').html("");
+    $('#open-forecast').html("");
     fetch("https://api.weather.gov/gridpoints/PHI/46,77/forecast")
     .then(res => res.json())
     .then(json => {
@@ -172,7 +154,7 @@ $('.test-jq').on('click', () => {
         let periods = json.properties.periods;
         for(let period of periods){
             // display.html("");
-
+            break;
         }
     })
 })
@@ -188,6 +170,7 @@ $('.test-jq').on('click', () => {
 
 $('.open-weather').on('click', () => {
     counter++;
+    $('#forecast').html("");
     openWeather();
 })
 

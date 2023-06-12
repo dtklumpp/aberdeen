@@ -3,7 +3,7 @@ console.log({biff});
 
 let count = 0;
 // export count;
-export default biff;
+// export default biff;
 // module.exports = biff;
 
 // FOR "FIRSTPAGE"
@@ -124,6 +124,8 @@ let links = [
     ['css-vars',"./varspage.html"],
     ['fetch', "./fetch.html"],
     ['storage','./storage.html'],
+    ['import', './import.html'],
+    ['chat','./chat.html'],
 ]
 
 for(let link of links){
@@ -149,3 +151,4 @@ for(let link of links){
 
 //FOR FETCH PAGE
 
+// export default biff;
