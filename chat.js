@@ -102,14 +102,33 @@ let msgCount = 0;
 $('#send').on('click', sendMessage);
 
 function sendMessage(){
-    let message = "msg"+msgCount;
+    let message = "_msg"+msgCount;
     $('#outbox').append(message);
+
+    // setTimeout(() => {
+    //     dcg.send(message);
+    // }, 500)
 
     dcg.send(message);
 
     msgCount++;
 }
 
+//ok now what
+//replace globals with pasting
+//deactivate buttons
+//input boxes and such
+//better formatted ID/address
+//error-checks
+//callbacks?
+//exit and close buttons
+//files/audio
+//sockets
+
+//list what didn't need!
+//all that SDP crap!
+
+//plan:
 
 //ask if host i guess?
 //make pc
