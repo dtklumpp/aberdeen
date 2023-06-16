@@ -97,7 +97,7 @@ const jqnav = $('#navbar-jq');
 // jqnav.text('jqnav is here!');
 // jqnav.css('color', 'red');
 jqnav.addClass('header');
-console.log("jqnav didn't throw an error");
+// console.log("jqnav didn't throw an error");
 
 // jqnavs.eq(0)
 // .html 
