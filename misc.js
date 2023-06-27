@@ -31,7 +31,10 @@ async function pasteit(){
 }
 
 const prompter = document.querySelector('#prompter');
-prompter.onclick = () => {
+prompter.onclick = promptIt;
+
+function promptIt() {
     let input = prompt("write to the console!");
     console.log(input);
 }
+
