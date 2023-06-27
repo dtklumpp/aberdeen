@@ -16,5 +16,22 @@ async function pasteit(){
     pasteTarget.value = clip;
 
     divTarget.innerText = clip;
+    
+    // elem.value = ""
+    // elem.innerText = ""
+    // elem.innerHTMl = ""
+    // textContent (excludes links?)
+    // elem.append
+    // elem.appendChild
+    // elem.before
+    // elem.after
+    // elem.addEventListener
+    // elem.onclick
+    // elem.focus()
 }
 
+const prompter = document.querySelector('#prompter');
+prompter.onclick = () => {
+    let input = prompt("write to the console!");
+    console.log(input);
+}
