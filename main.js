@@ -126,6 +126,7 @@ let links = [
     ['storage','./storage.html'],
     ['import', './import.html'],
     ['chat','./chat.html'],
+    ['misc','./misc.html'],
 ]
 
 for(let link of links){
