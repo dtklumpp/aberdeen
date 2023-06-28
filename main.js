@@ -72,6 +72,12 @@ class NavBar extends HTMLElement {
             <button>nada</button>
             <a href="./gridpage.html"><button>gridpage</button></a>
             <a href="./varspage.html"><button>css-vars</button></a>
+            <a href="./fetch.html"><button>fetch</button></a>
+            <a href="./storage.html"><button>storage</button></a>
+            <a href="./import.html"><button>import</button></a>
+            <a href="./chat.html"><button>chat</button></a>
+            <a href="./misc.html"><button>misc</button></a>
+            <a href="./cdns.html"><button>CDNs</button></a>
         </div>
         `;
 
@@ -127,6 +133,8 @@ let links = [
     ['import', './import.html'],
     ['chat','./chat.html'],
     ['misc','./misc.html'],
+    ['CDNs','./cdns.html'],
+    ['effects','./effects.html'],
 ]
 
 for(let link of links){
