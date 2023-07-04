@@ -1,3 +1,8 @@
 #rotate {
     transform: rotate(-15deg);
 }
+
+button.block {
+    display: block;
+    margin-bottom: 1.5rem;
+}

@@ -1,0 +1,42 @@
+<head>
+    <link rel="stylesheet" href="./base.css">
+    <script defer src="./navbar.js"></script>
+</head>
+<body>
+    <main-nav></main-nav>
+    <br/>
+<script>
+
+function addThree(x){
+    let y = 3;
+    for(let i = 0; i < y; y--){
+        x = x + i;
+    }
+    return x;
+}
+function addTwo(x){
+    return x + 2;
+}
+function twoTimesX(x){
+    return 2 * x;
+}
+function addEight(x){
+    debugger;
+    x = addTwo(x);
+    x = addThree(x);
+    for(let i = 0; i < 3; i++){
+        x++;
+    }
+    return x;
+}
+function init(){
+    let result = addEight(twoTimesX(10));
+    //should be 28
+    let text = document.createTextNode(result);
+    document.body.appendChild(text);
+}
+
+init();
+
+</script>
+</body>
