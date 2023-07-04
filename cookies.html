@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./base.css">
+    <script defer src="./navbar.js"></script>
+    <!-- <script defer src=""></script> -->
+    <title>cookies</title>
+</head>
+<body>
+    <main-nav></main-nav>
+    <br/>
+    <button class="block" id="setit" onclick="setCookie()">set cookie</button>
+    <button class="block" id="showit" onclick="showCookie()">show cookie</button>
+    <button class="block" id="clearit" onclick="clearCookie()">clear cookie</button>
+    <p id="output"></p>
+<script>
+
+let cookID = 0;
+function setCookie(){
+    cookID++;
+    let expiration = 5;
+    console.log('set it');
+    document.cookie = "marmot"+cookID+"=herman;max-age="+expiration;
+}
+
+function showCookie(){
+    console.log('show it');
+    console.log(document.cookie);
+    let output = document.getElementById('output');
+    output.textContent = document.cookie;
+}
+
+function clearCookie(){
+    console.log('clear it');
+    console.log('did not clear');
+    let cookies = document.cookie.split("; ");
+    for(let i = 0; i < cookies.length; i++){
+        cookies[i] = cookies[i] + ";max-age=0;"
+        document.cookie = cookies[i];
+    }
+}
+
+//note: this DOES reset the cookie age
+// document.cookie = "test-reset=val1;max-age=5"
+// document.cookie = "test-reset=val1;SameSite=None;Secure"
+</script>
+</body>
+</html>
