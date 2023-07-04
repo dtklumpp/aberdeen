@@ -26,6 +26,7 @@ class NavBar extends HTMLElement {
             <a href="./effects.html"><button>effects</button></a>
             <a href="./debugger.html"><button>debug</button></a>
             <a href="./cookies.html"><button>cookies</button></a>
+            <a href="./plain.html"><button>plain</button></a>
         </div>
         `;
 
