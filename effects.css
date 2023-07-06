@@ -6,3 +6,47 @@ button.block {
     display: block;
     margin-bottom: 1.5rem;
 }
+
+
+div.CSS-anime-example {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+.another {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}
+
+.translate:hover {
+    transform: translate(10px, -30px);
+    transition: linear;
+    transition: ease;
+}
+
+.scale:hover {
+    transform: scale(1.1);
+    transition: linear;
+    transition: ease;
+}
+
+.rotate:hover {
+    transform: rotate(20deg);
+    transition: linear;
+    transition: ease;
+}
+
+.shade:hover {
+    background-color: purple;
+    transition: linear;
+    transition: ease;
+}

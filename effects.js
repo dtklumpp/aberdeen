@@ -23,3 +23,13 @@ closeButton.onclick = () => {
     // window.open('','_self').close()
     console.log("can't seem to do this")
 }
+
+$( function() {
+    $( "#slider" ).slider();
+} );
+
+// $( "#slider" ).slider();
+
+$( function() {
+    $( "#sortable" ).sortable();
+} );
