@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lan="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="./navbar.js"></script>
+    <link rel="stylesheet" href="./base.css">
+    <title>scape</title>
+</head>
+<body>
+    <main-nav></main-nav>
+    <h2>scraping page</h2>
+
+    <!-- THIS DOESN'T WORK -->
+    <!-- DUE TO BGA SETTINGS SECURITY ISSUE -->
+    <!-- <iframe id="bga-frame" src="https://boardgamearena.com/gamestats?player=84698819&game_id=1146" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+
+    <!-- try fetch request now? -->
+    <br/>
+    <button class='block' id="fetch-games">fetch games</button>
+    <button class='block' id="fetch-goog">fetch search</button>
+    <button class='block' id="fetch-lib">fetch lib</button>
+<script>
+    let fetcher = document.getElementById('fetch-games');
+    fetcher.onclick = fetchGames;
+    async function fetchGames(){
+        let headers = new Headers();
+        headers.append('Cookie', "__stripe_mid=13928d15-6c41-47ac-9337-d235354551094733b8; TournoiEnLigneid=2DSnrJPbiq5coLH; TournoiEnLignetk=wXVuAcxejwStUG2Wek7wh6ASl52OH1vkGgvQTc7o3V5FqUAulrSwwUWmfkQtnBNX; PHPSESSID=3465m0jlrqulergm1cdola9kc4; TournoiEnLigne_sso_user=dondavid%243%24david.t.klumpp%40gmail.com; TournoiEnLigne_sso_id=217334df56917360c40a47b313e74863; _ga=GA1.1.232665933.1652738795; TournoiEnLigneidt=hM15G2U44vHTrS1; TournoiEnLignetkt=vCpXQ3k3J02Ps0zxuAXbfEUDsVefvTU35sXVA5jt1je3dpmMncHVjgZU9g5kJtYE; _ga_DWXD9R5L7D=GS1.1.1688747604.375.1.1688748181.60.0.0")
+        let res = await fetch("https://boardgamearena.com/gamereview?table=309668816", {
+            // credentials: "same-origin",
+            // credentials: 'include',
+            // headers: headers,
+        });
+        console.log({res});
+    }
+
+    let googler = document.getElementById('fetch-goog');
+    googler.onclick = fetchGoog;
+    async function fetchGoog(){
+        let res = await fetch("https://www.google.com", {
+            // mode: 'no-cors',
+        });
+        console.log({res});
+    }
+
+    let liber = document.getElementById('fetch-lib');
+    liber.onclick = fetchLib;
+    async function fetchLib(){
+        let res = await fetch("http://on.nypl.org/1OTle9i", {
+        });
+        console.log({res});
+    }
+
+
+</script>
+</body>
+</html>
