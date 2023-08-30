@@ -9,8 +9,20 @@
 <body>
     <main-nav></main-nav>
     <h2>files page</h2>
+    <input type="file">
+    <br/>
+    <br/>
+    <div class="output">placeholder for output</div>
 <script>
-
+    let input = document.querySelector("input");
+    let output = document.querySelector(".output");
+    input.addEventListener("change", loadText);
+    async function loadText(){
+        let file = input.files[0];
+        if(file){
+            output.innerText = await file.text();
+        }
+    }
 </script>
 </body>
 </html>
