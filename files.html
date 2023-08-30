@@ -12,16 +12,108 @@
     <input type="file">
     <br/>
     <br/>
-    <div class="output">placeholder for output</div>
+    <button id="load">load</button>
+    <div class="output">[placeholder for output]</div>
+    <br/>
+    <button id="stream">stream</button>
+    <div id="accumulator" style="width:50%">[accumulator placeholder]</div>
+    <br>
+    <button id="buffer">buffer</button>
+    <div id="sample">[sample placeholder]</div>
 <script>
     let input = document.querySelector("input");
     let output = document.querySelector(".output");
-    input.addEventListener("change", loadText);
+
+    let accumulator = document.getElementById("accumulator");
+
+    let buffButton = document.getElementById('buffer');
+    let sample = document.getElementById('sample');
+
+    input.addEventListener("change", () =>{
+        let file = input.files[0];
+        console.log({file});
+    });
+
+    // input.addEventListener("change", loadText);
+    let loadButton = document.getElementById("load");
+    loadButton.onclick = loadText;
     async function loadText(){
+        console.log('loading');
         let file = input.files[0];
         if(file){
             output.innerText = await file.text();
         }
+    }
+
+    let streamButton = document.getElementById("stream");
+    streamButton.onclick = streamText;
+    async function streamText(){
+        console.log('streaming');
+        let file = input.files[0];
+
+        if(file){
+            let stream = file.stream();
+            console.log({stream});
+            let size = 0;
+            // let chunks = 0;
+
+            // for await (let piece of stream){
+            //     size += piece.length;
+            //     console.log("size: "+size);
+            //     let block = document.createElement('div');
+            //     block.innerText = piece;
+            //     accumulator.appendChild(block);
+            // }
+
+            let reader = stream.getReader();
+
+            let count = 0;
+            while(true || count > 1000){
+                let {done, value} = await reader.read();
+                // let {done, value} = await stream.read();
+                if(done) break;
+                size += value.length;
+                count++;
+                console.log("size: "+size);
+                console.log("chunks: "+count);
+                if(value){
+                    let block = document.createElement('div');
+                    block.innerText = value;
+                    accumulator.appendChild(block);
+                }
+            }
+        }
+
+        console.log('done accumulating maybe?');
+    }
+
+    buffButton.onclick = buffSample;
+    async function buffSample(){
+        let file = input.files[0];
+
+        if(file){
+
+            // output.innerText = await file.text();
+
+            let buffer = await file.arrayBuffer();
+            let view = new DataView(buffer, 0);
+    
+            let five;
+            five = view.getInt16(5);
+            console.log({five});
+            view.setInt16(5, 100);
+            five = view.getInt16(5);
+            console.log({five});
+
+            let newblob = new Blob([buffer]);
+
+            console.log({newblob});
+
+            sample.innerText = await newblob.text();
+        }
+
+
+
     }
 </script>
 </body>
