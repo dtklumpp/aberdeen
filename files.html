@@ -17,9 +17,13 @@
     <br/>
     <button id="stream">stream</button>
     <div id="accumulator" style="width:50%">[accumulator placeholder]</div>
-    <br>
+    <br/>
     <button id="buffer">buffer</button>
     <div id="sample">[sample placeholder]</div>
+    <br/>
+    <button id="pipe">pipe</button>
+    <div id="drain">[drain placeholder]</div>
+
 <script>
     let input = document.querySelector("input");
     let output = document.querySelector(".output");
@@ -28,6 +32,9 @@
 
     let buffButton = document.getElementById('buffer');
     let sample = document.getElementById('sample');
+
+    let pipeButton = document.getElementById('pipe');
+    let drain = document.getElementById('drain');
 
     input.addEventListener("change", () =>{
         let file = input.files[0];
@@ -68,7 +75,7 @@
             let reader = stream.getReader();
 
             let count = 0;
-            while(true || count > 1000){
+            while(true && count < 1000){
                 let {done, value} = await reader.read();
                 // let {done, value} = await stream.read();
                 if(done) break;
@@ -90,6 +97,7 @@
     buffButton.onclick = buffSample;
     async function buffSample(){
         let file = input.files[0];
+        console.log('buffering');
 
         if(file){
 
@@ -111,9 +119,46 @@
 
             sample.innerText = await newblob.text();
         }
+    }
 
 
+    pipeButton.onclick = drainPipe;
+    async function drainPipe(){
+        let file = input.files[0];
+        if(file){
+            let stream = file.stream();
+            console.log('piping');
+            let count = 0;
+            // let done = stream.pipeTo("writable stream");
 
+            let break1 = document.createElement("br");
+            let break2 = document.createElement("br");
+
+            const writeStream = new WritableStream({
+                write(chunk){
+                    console.log(chunk);
+                    drain.appendChild(document.createElement("br"));
+                    drain.appendChild(document.createElement("br"));
+                    // drain.appendChild(break1);
+                    // drain.appendChild(break2);
+                    drain.append(chunk);
+                    // drain.append("<br/><br/>");
+                    console.log({count});
+                    count++;
+                },
+                close(){
+                    console.log('closed');
+                },
+                abort(){
+                    console.log('aborted');
+                }
+            })
+            let promise = stream.pipeTo(writeStream);
+            let resolved = await promise;
+            // done = await stream.pipeTo(writeStream);
+            console.log({promise});
+            console.log({resolved});
+        }
     }
 </script>
 </body>
