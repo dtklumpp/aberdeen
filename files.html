@@ -25,6 +25,8 @@
     <div id="drain">[drain placeholder]</div>
     <br/>
     <button id="down">download</button>
+    <button id="meta">metadata</button>
+    <div id="data">[data placeholder]</div>
 
 <script>
     let input = document.querySelector("input");
@@ -39,6 +41,9 @@
     let drain = document.getElementById('drain');
     
     let downButton = document.getElementById('down');
+    let metaButton = document.getElementById('meta');
+
+    let dataArea = document.getElementById('data');
 
     input.addEventListener("change", () =>{
         let file = input.files[0];
@@ -182,6 +187,66 @@
         document.body.appendChild(ghost);
         ghost.click();
         document.body.removeChild(ghost);
+
+    }
+
+    metaButton.onclick = getMetaData;
+
+    async function getMetaData(){
+        console.log('getting metadata');
+
+        let file = input.files[0];
+
+        let name = file.name;
+        let time = file.lastModified;
+        let date = file.lastModifiedDate;
+        let path = file.webkitRelativePath;
+        let size = file.size;
+        let type = file.type;
+
+        console.log({name});
+        console.log({time});
+        console.log({date});
+        console.log({path});
+        console.log({size});
+        console.log({type});
+
+        // dataArea.append(document.createElement('p').setAttribute('innerText', date));
+        // dataArea.append(document.createElement('p').append(time));
+        // dataArea.append(document.createElement('p').append(date));
+        // dataArea.append(document.createElement('p').append(path));
+        // dataArea.append(document.createElement('p').append(size));
+        // dataArea.append(document.createElement('p').append(type));
+        
+        // dataArea.append(name);
+        // dataArea.append(time);
+        // dataArea.append(date);
+        // dataArea.append(path);
+        // dataArea.append(size);
+        // dataArea.append(type);
+        
+        // dataArea.append(document.createTextNode(name));
+        // dataArea.append(document.createTextNode(time));
+        
+        // dataArea.append(document.createElement('p').appendChild(document.createTextNode(name)));
+        // dataArea.append(document.createElement('p').appendChild(document.createTextNode(time)));
+        
+        // dataArea.append(document.createElement('div').appendChild(document.createTextNode(time)));
+        // dataArea.append(document.createElement('div').append(name));
+        // dataArea.append(document.createElement('div'));
+
+        // let block = document.createElement('div');
+        // block.innerText = type;
+        // dataArea.appendChild(block);
+
+        dataArea.innerHTML = "";
+
+        dataArea.append(document.createElement('div').appendChild(document.createTextNode("name: "+name)).parentElement);
+        dataArea.append(document.createElement('div').appendChild(document.createTextNode("time: "+time)).parentElement);
+        dataArea.append(document.createElement('div').appendChild(document.createTextNode("date: "+date)).parentElement);
+        dataArea.append(document.createElement('div').appendChild(document.createTextNode("path: "+path)).parentElement);
+        dataArea.append(document.createElement('div').appendChild(document.createTextNode("size: "+size+" bytes")).parentElement);
+        dataArea.append(document.createElement('div').appendChild(document.createTextNode("type: "+type)).parentElement);
 
     }
 
