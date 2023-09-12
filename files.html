@@ -23,6 +23,8 @@
     <br/>
     <button id="pipe">pipe</button>
     <div id="drain">[drain placeholder]</div>
+    <br/>
+    <button id="down">download</button>
 
 <script>
     let input = document.querySelector("input");
@@ -35,6 +37,8 @@
 
     let pipeButton = document.getElementById('pipe');
     let drain = document.getElementById('drain');
+    
+    let downButton = document.getElementById('down');
 
     input.addEventListener("change", () =>{
         let file = input.files[0];
@@ -160,6 +164,27 @@
             console.log({resolved});
         }
     }
+
+    downButton.onclick = downloadFile;
+    async function downloadFile(){
+
+        console.log('downloading');
+
+        let file = input.files[0];
+
+        let url = URL.createObjectURL(file);
+
+        // browser.downloads.download({url: url});
+
+        let ghost = document.createElement('a');
+        ghost.href = url;
+        ghost.download = "aberdown";
+        document.body.appendChild(ghost);
+        ghost.click();
+        document.body.removeChild(ghost);
+
+    }
+
 </script>
 </body>
 </html>
