@@ -31,6 +31,7 @@ class NavBar extends HTMLElement {
             <a href="./bga.html"><button>bga</button></a>
             <a href="./files.html"><button>files</button></a>
             <a href="./firebase.html"><button>firebase</button></a>
+            <a href="./urls.html"><button>urls</button></a>
         </div>
         `;
 
